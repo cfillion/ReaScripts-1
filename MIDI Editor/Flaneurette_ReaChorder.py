@@ -1,10 +1,83 @@
 # @description ReaChorder
 # @author Flaneurette
-# @version 2.1
-# @changelog update
+# @version 2.0
 # @provides
-#   [main=midi_editor,midi_inlineeditor windows] .
-#   [main=midi_editor,midi_inlineeditor linux] .
+#   [linux main] .
+#   [windows main] .
+#   [linux] Flaneurette_ReaChorder/ReaChorderBassSection.ini
+#   [windows] Flaneurette_ReaChorder/ReaChorderBassSection.ini
+#   [linux] Flaneurette_ReaChorder/ReaChorderChordSection.ini
+#   [windows] Flaneurette_ReaChorder/ReaChorderChordSection.ini
+#   [linux] Flaneurette_ReaChorder/ReaChorderDrumSection.ini
+#   [windows] Flaneurette_ReaChorder/ReaChorderDrumSection.ini
+#   [linux] Flaneurette_ReaChorder/ReaChorderGuitarSection.ini
+#   [windows] Flaneurette_ReaChorder/ReaChorderGuitarSection.ini
+#   [linux] Flaneurette_ReaChorder/ReaChorderMain.ini
+#   [windows] Flaneurette_ReaChorder/ReaChorderMain.ini
+#   [linux] Flaneurette_ReaChorder/ReaChorderMelodySection.ini
+#   [windows] Flaneurette_ReaChorder/ReaChorderMelodySection.ini
+#   [linux] Flaneurette_ReaChorder/drumpatterns.json
+#   [windows] Flaneurette_ReaChorder/drumpatterns.json
+#   [linux] Flaneurette_ReaChorder/_getdirectory_.py
+#   [windows] Flaneurette_ReaChorder/_getdirectory_.py
+#   [linux] Flaneurette_ReaChorder/bass_section.py
+#   [windows] Flaneurette_ReaChorder/bass_section.py
+#   [linux] Flaneurette_ReaChorder/chord_section.py
+#   [windows] Flaneurette_ReaChorder/chord_section.py
+#   [linux] Flaneurette_ReaChorder/debug.py
+#   [windows] Flaneurette_ReaChorder/debug.py
+#   [linux] Flaneurette_ReaChorder/drum_section.py
+#   [windows] Flaneurette_ReaChorder/drum_section.py
+#   [linux] Flaneurette_ReaChorder/guitar_section.py
+#   [windows] Flaneurette_ReaChorder/guitar_section.py
+#   [linux] Flaneurette_ReaChorder/melody_section.py
+#   [windows] Flaneurette_ReaChorder/melody_section.py
+#   [linux] Flaneurette_ReaChorder/reaper_track.py
+#   [windows] Flaneurette_ReaChorder/reaper_track.py
+#   [linux] Flaneurette_ReaChorder/rs_midi.py
+#   [windows] Flaneurette_ReaChorder/rs_midi.py
+#   [linux] Flaneurette_ReaChorder/rs_statemanager.py
+#   [windows] Flaneurette_ReaChorder/rs_statemanager.py
+#   [linux] Flaneurette_ReaChorder/scales.py
+#   [windows] Flaneurette_ReaChorder/scales.py
+#   [linux] Flaneurette_ReaChorder/wizard_section.py
+#   [windows] Flaneurette_ReaChorder/wizard_section.py
+#   [linux] Flaneurette_ReaChorder/LICENSE.txt
+#   [windows] Flaneurette_ReaChorder/LICENSE.txt
+#   [linux] Flaneurette_ReaChorder/screenshot.png
+#   [windows] Flaneurette_ReaChorder/screenshot.png
+# @link Reachorder Forum Thread: https://forum.cockos.com/showthread.php?t=200185
+# @donation Donate via PayPal: https://www.paypal.com/donate?hosted_button_id=4JKH8U43WYZL4
+# @about
+#   ReaChorder is a Python extension/plugin that enables you to generate songs in MIDI format. It does this by applying music theory. You can choose song formula, the key and whether it needs to be Major or Minor. It then uses the circle of fifths to propose chord progression and randomly chooses and combines different chord inversions, melodies and bass lines. It also has a drum sequencer with many drum pattern presets.
+#
+#   Minimum required software
+#
+#   Reaper 4.5.2+: http://reaper.fm/
+#   Python: http://www.python.org/download/releases/3.3.0/
+#   SWS extension: http://www.standingwaterstudios.com/
+#
+#   For more information and the READM me visit:
+#
+#   https://github.com/flaneurette/ReaChorder#readme
+#
+#   Discussion
+#   Visit the Reaper forum for discussion: https://forum.cockos.com/showthread.php?t=200185
+#
+#
+#   ALL RIGHTS RESERVED (c) COPYRIGHT Alexandra van den Heetkamp.
+#
+#   REACHORDER IS A PLUGIN FOR COCKOS REAPER, CREATED BY ALEXANDRA VAN DEN HEETKAMP. 
+#   THIS SOFTWARE MAY NOT BE SOLD, DISTRIBUTED, EMBEDDED OR ALTERED WITHOUT 
+#   EXPLICIT PERMISSION FROM THE COPYRIGHT HOLDER WITH THE EXCEPTION OF 
+#   A GUI. THE AFOREMENTIONED COPYRIGHT HOLDER CANNOT BE HELD ACCOUNTABLE
+#   FOR ANY USE, MISUSE, LIABILITY, CLAIMS, THAT MAY ARISE FROM USING THIS SOFTWARE.
+#
+#   NO SUPPORT IS GIVEN. NO WARRANTY IS GIVEN.
+#
+#   LICENSE LAST REVISED: 24TH OF OCTOBER 2021, ARNHEM, THE NETHERLANDS.
+#   DUTCH LAW AND COPYRIGHT LAW APPLIES. ALL RIGHTS RESERVED.
+
 try:
     from reaper_python import *
 except ImportError:
@@ -13,7 +86,7 @@ except ImportError:
 try:
     import sys
     sys.path.append(RPR_GetResourcePath() + '/Scripts')
-    sys.path.append('./ReaChorder')
+    sys.path.append(sys.path[0] + '/Flaneurette_ReaChorder')
 except ImportError:
     RPR_ShowConsoleMsg('Could not import SYS.\n')
     pass
