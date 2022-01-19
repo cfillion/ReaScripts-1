@@ -1,6 +1,6 @@
 -- @description Create single region with tail length from selected items
 -- @author Eddie Pacheco
--- @version 1.1
+-- @version 1.2
 -- @changelog Bug fix for region not accounting for first item not having lowest timeline value. Region created will now properly address item positions in selection.
 -- @about
 --   # Create a single region with name and tail length from selected items
