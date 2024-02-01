@@ -1,6 +1,6 @@
 -- @description Interactive ReaScript (iReaScript)
 -- @author cfillion
--- @version 0.8.4
+-- @version 0.8.44
 -- @changelog
 --   Fix autocompletion after an opening parenthesis
 --   Fix display glitch when pasting tab characters
